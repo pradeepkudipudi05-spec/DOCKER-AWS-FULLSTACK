@@ -4,6 +4,10 @@ WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
+
+# Ensure vite has execute permissions
+RUN chmod +x node_modules/.bin/vite
+
 COPY . .
 RUN npm run build
 
