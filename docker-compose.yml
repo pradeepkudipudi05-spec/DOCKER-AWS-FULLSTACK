@@ -24,7 +24,7 @@ services:
       context: ./STUDENTAPI-SPRINGBOOT
       dockerfile: ../STUDENTAPI-FULLSTACK/backend.Dockerfile
     ports:
-      - "8081:8080"
+      - "2001:2000"
     depends_on:
       mysqldb:
         condition: service_healthy
@@ -38,7 +38,7 @@ services:
       context: ./STUDENTAPI-REACT
       dockerfile: ../STUDENTAPI-FULLSTACK/frontend.Dockerfile
     ports:
-      - "80:80"
+      - "3001:80"
     depends_on:
       backend
     networks:
